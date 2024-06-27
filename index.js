@@ -1,17 +1,15 @@
 import express from "express";
-import statementRouter from "./routes/statements.js";
-// import mongoose from "mongoose";
-// import 'dotenv/config';
+import statementRouter from "./routes/statement_routes.js";
 import dbConnection from "./config/db.js";
 
+// Express app creation
 const policeapp = express();
 
+//Middleware application to unwrap data from frontend
+policeapp.use(express.json());
+
+// Using routes to have access to the endpoints
 policeapp.use(statementRouter);
-
-// const connectionString = process.env.Mongo_url;
-
-// mongoose.connect(connectionString)
-// .then(() => console.log('Connected to Ghana-Police Database!'));
 
 const port = 7979;
 
