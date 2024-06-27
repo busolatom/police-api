@@ -24,9 +24,9 @@ const statementSchema = new Schema({
 });
 
 // Middleware to update `updatedAt` field on update
-statementSchema.pre('save', function (next) {
-    this.updatedAt = new Date();
-    next();
-});
+// statementSchema.pre('save', function (next) {
+//     this.updatedAt = new Date();
+//     next();
+// });
 
 export const StatementModel = model('statements', statementSchema);

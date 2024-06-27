@@ -6,7 +6,8 @@ export const addStatement = async (req, res) => {
     try {
         console.log('request', req.body);
         const addData = await StatementModel.create(req.body);
-        res.json('Statement Added');
+        // res.json(`Statement Added, ${addData}`);
+        res.json(`Statement with id ${req.body.statementId} added`);
     } catch (error) {
         console.log(error)
     }
