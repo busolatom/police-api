@@ -1,7 +1,6 @@
 import { Schema, model } from "mongoose";
 
 const statementSchema = new Schema({
-    statementId: { type: String },
     incidentType: {
         type: String,
         enum: ['Criminal', 'Non-criminal'],
